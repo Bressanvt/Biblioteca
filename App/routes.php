@@ -15,6 +15,6 @@ switch($url)
     break;
 
     case '/aluno/cadastro';
-    AlunoController::cadastro();
+        AlunoController::cadastro();
     break;
 }

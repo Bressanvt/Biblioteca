@@ -4,26 +4,28 @@ namespace App\Controller;
 
 use App\Model\Aluno;
 
-class AlunoController
+final class AlunoController
 {
-  public static function cadastro()
+  public static function cadastro() : void 
   {
-    echo "vou mostrar o formulario a depender...";
 
     $model = new Aluno();
-    $model->id = 8;
+    //$model->id = 8;
     $model->nome = "Vitor";
     $model->ra = 123;
     $model->curso = "Desenvolvimento de Sistemas";
     $model->save();
+    echo"Aluno inserido";
   } 
 
 
-  public static function listar()
+  public static function listar() : void 
   {
     echo "listagem de alunos";
     $aluno = new Aluno();
-    $aluno->getAllRows();
+    $lista = $aluno->getAllRows();
+
+    var_dump($lista);
   }
 
 }

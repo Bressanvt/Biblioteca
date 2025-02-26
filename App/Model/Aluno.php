@@ -3,7 +3,8 @@
 namespace App\Model;
 
 use App\DAO\AlunoDAO;
-class Aluno
+
+final class Aluno
 {
     public $id, $nome, $ra, $curso;
 
@@ -15,19 +16,19 @@ class Aluno
 
    function getById(int $id): ?Aluno
    {
-        return new Aluno();
+        return (new AlunoDAO())-> selectById($id);
    }
 
-
+   
    function getAllRows(): array
    {
-        return[];
+     return (new AlunoDAO())-> select($this);
    }
     
    
    function delete(int $id): bool
    {
-        return false;
+     return (new AlunoDAO())-> delete($id);
    }
 
 }
